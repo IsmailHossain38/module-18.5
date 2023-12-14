@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content%}
+
+
+
+{% comment %} <form method="post">
+    {% csrf_token %}
+   <!-- {{form|crispy}} -->
+    {% for fm in form %}
+        {{fm.label_tags}}
+        {{fm}}
+        {{fm.errors}}
+    {%endfor%}
+</from> {% endcomment %}
+<br>
+ 
+<a href="{% url 'user_changepass' %}" class="btn btn-danger">Change password with old password</a>
+<a href="{% url 'user_changepass2' %}" class="btn btn-warning">Change password without old password</a>
+
+{% endblock %}
